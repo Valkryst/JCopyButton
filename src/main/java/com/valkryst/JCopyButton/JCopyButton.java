@@ -1,6 +1,5 @@
 package com.valkryst.JCopyButton;
 
-import com.sun.istack.internal.NotNull;
 import lombok.NonNull;
 
 import javax.swing.*;
@@ -50,7 +49,7 @@ public class JCopyButton extends JButton {
      * @param component A {@link JTextComponent}.
      * @param icon An {@link Icon} to display on the button.
      */
-    public JCopyButton(final @NotNull JTextComponent component, final @NonNull Icon icon) {
+    public JCopyButton(final @NonNull JTextComponent component, final @NonNull Icon icon) {
         super(icon);
         this.setAssociatedComponent(component);
     }

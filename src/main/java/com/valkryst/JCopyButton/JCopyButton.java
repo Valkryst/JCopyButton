@@ -61,16 +61,7 @@ public class JCopyButton extends JButton {
      * @param component A {@link JTextComponent}.
      */
     private void copyTextToClipboard(final JTextComponent component) {
-        JCopyButton.getSystemClipboard().setContents(getComponentText(component), null);
-    }
-
-    /**
-     * Retrieves the system {@link Clipboard}.
-     *
-     * @return The system {@link Clipboard}.
-     */
-    private static Clipboard getSystemClipboard() {
-        return Toolkit.getDefaultToolkit().getSystemClipboard();
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(getComponentText(component), null);
     }
 
     /**

@@ -8,6 +8,7 @@ import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.ActionListener;
 
 /**
  * <p>
@@ -16,6 +17,9 @@ import java.awt.datatransfer.StringSelection;
  * </p>
  */
 public class JCopyButton extends JButton {
+    /** {@link ActionListener} to be called when this button is clicked. */
+    private ActionListener actionListener;
+
     /**
      * Constructs a new {@code JCopyButton}, which copies the text from a {@link JTextComponent} to the system
      * {@link Clipboard} when clicked.
@@ -86,6 +90,11 @@ public class JCopyButton extends JButton {
      * @param component A {@link JTextComponent}.
      */
     public void setAssociatedComponent(final @NonNull JTextComponent component) {
-        super.addActionListener(e -> copyTextToClipboard(component));
+        if (actionListener != null) {
+            super.removeActionListener(actionListener);
+        }
+
+        actionListener = e -> copyTextToClipboard(component);
+        super.addActionListener(actionListener);
     }
 }

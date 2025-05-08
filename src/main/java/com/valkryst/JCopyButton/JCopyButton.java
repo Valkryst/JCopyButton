@@ -65,7 +65,7 @@ public class JCopyButton extends JButton {
      *
      * @return The system {@link Clipboard}.
      */
-    public static Clipboard getSystemClipboard() {
+    private static Clipboard getSystemClipboard() {
         return Toolkit.getDefaultToolkit().getSystemClipboard();
     }
 

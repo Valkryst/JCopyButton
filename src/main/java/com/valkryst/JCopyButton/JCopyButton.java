@@ -1,11 +1,13 @@
 package com.valkryst.JCopyButton;
 
+import com.sun.istack.internal.NotNull;
+import lombok.NonNull;
+
 import javax.swing.*;
 import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import java.util.Objects;
 
 /**
  * <p>
@@ -20,9 +22,33 @@ public class JCopyButton extends JButton {
      *
      * @param component A {@link JTextComponent}.
      */
-    public JCopyButton(final JTextComponent component) {
+    public JCopyButton(final @NonNull JTextComponent component) {
         super("Copy");
-        setAssociatedComponent(component);
+        this.setAssociatedComponent(component);
+    }
+
+    /**
+     * Constructs a new {@code JCopyButton}, which copies the text from a {@link JTextComponent} to the system
+     * {@link Clipboard} when clicked.
+     *
+     * @param component A {@link JTextComponent}.
+     * @param text Text to display on the button.
+     */
+    public JCopyButton(final @NonNull JTextComponent component, final String text) {
+        super(text == null ? "" : text);
+        this.setAssociatedComponent(component);
+    }
+
+    /**
+     * Constructs a new {@code JCopyButton}, which copies the text from a {@link JTextComponent} to the system
+     * {@link Clipboard} when clicked.
+     *
+     * @param component A {@link JTextComponent}.
+     * @param icon An {@link Icon} to display on the button.
+     */
+    public JCopyButton(final @NotNull JTextComponent component, final @NonNull Icon icon) {
+        super(icon);
+        this.setAssociatedComponent(component);
     }
 
     /**
@@ -59,8 +85,7 @@ public class JCopyButton extends JButton {
      *
      * @param component A {@link JTextComponent}.
      */
-    public void setAssociatedComponent(final JTextComponent component) {
-        Objects.requireNonNull(component);
+    public void setAssociatedComponent(final @NonNull JTextComponent component) {
         super.addActionListener(e -> copyTextToClipboard(component));
     }
 }

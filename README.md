@@ -40,7 +40,7 @@ Add JCopyButton as a dependency.
 
 ```
 dependencies {
-	implementation 'com.github.Valkryst:JCopyButton:2025.5.8'
+	implementation 'com.github.Valkryst:JCopyButton:2025.5.9'
 }
 ```
 
@@ -62,7 +62,7 @@ Add JCopyButton as a dependency.
 <dependency>
     <groupId>com.github.Valkryst</groupId>
     <artifactId>JCopyButton</artifactId>
-    <version>2025.5.8</version>
+    <version>2025.5.9</version>
 </dependency>
 ```
 
@@ -77,7 +77,7 @@ resolvers += "jitpack" at "https://jitpack.io"
 Add JCopyButton as a dependency.
 
 ```
-libraryDependencies += "com.github.Valkryst" % "JCopyButton" % "2025.5.8"
+libraryDependencies += "com.github.Valkryst" % "JCopyButton" % "2025.5.9"
 ```
 
 ## Example
